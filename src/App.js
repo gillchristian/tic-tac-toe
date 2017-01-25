@@ -3,8 +3,10 @@ import React, { PropTypes }  from 'react'
 import './App.css'
 
 import Cell from './components/Cell'
+import ScoreBoard from './components/ScoreBoard'
+import Score from './components/Score'
 import Board from './components/styled/Board'
-import Container from './components/styled/Container'
+import AppStyleWrapper from './components/styled/AppStyleWrapper'
 
 class App extends React.Component {
   static propTypes = {
@@ -23,11 +25,21 @@ class App extends React.Component {
 
   render() {
     return (
-      <Container>
+      <AppStyleWrapper>
         <Board>
           {this.listCells()}
+          <ScoreBoard>
+            <Score>
+              <Cell mark="●" next="●" />
+              {7}
+            </Score>
+            <Score>
+              <Cell mark="✖" next="✖" />
+              {5}
+            </Score>
+          </ScoreBoard>
         </Board>
-      </Container>
+      </AppStyleWrapper>
     );
   }
 }

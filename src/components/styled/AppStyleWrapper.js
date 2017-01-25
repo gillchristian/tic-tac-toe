@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Container = styled.div`
+const AppStyleWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,5 +8,5 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
 `
-export default Container
+export default AppStyleWrapper
 

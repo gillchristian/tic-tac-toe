@@ -13,13 +13,12 @@ const Wrapper = styled.div`
   margin: 5px;
   font-weight: bold;
   font-size: 40px;
-  font-family: monospace;
   color: white;
   box-shadow: 0 2px 5px gray;
 
   &:hover {
     background-color: ${props => !props.mark && 'lightgray'};
-    cursor: ${props => !!props.mark && 'no-drop'};
+    cursor: ${props => !!props.mark && 'default'};
 `
 
 class Cell extends React.Component {
