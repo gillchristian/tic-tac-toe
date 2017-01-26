@@ -2,6 +2,7 @@
   "name": "tic-tac-toe",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://gillchristian.github.io/tic-tac-toe",
   "devDependencies": {
     "react-scripts": "0.8.5"
   },
