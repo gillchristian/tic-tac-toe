@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react'
 import styled from 'styled-components'
 
+import { X, O } from '../constants'
+
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -23,8 +25,8 @@ const Wrapper = styled.div`
 
 class Cell extends React.Component {
   static propTypes = {
-    mark: PropTypes.oneOf(['●', '✖', '']),
-    next: PropTypes.oneOf(['●', '✖'])
+    mark: PropTypes.oneOf([O, X, '']),
+    next: PropTypes.oneOf([O, X])
   }
 
   state = {
@@ -69,9 +71,9 @@ export default Cell
 
 function getCellColor(props) {
   switch (props.mark) {
-    case '✖':
+    case X:
       return 'palevioletred'
-    case '●':
+    case O:
       return 'tomato'
     default:
       return 'papayawhip'

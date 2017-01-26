@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux'
 
+import score from './score'
+
 export default combineReducers({
-  foo: (state = {foo : 'bar'}) => state
+  score
 })
 

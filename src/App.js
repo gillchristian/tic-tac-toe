@@ -2,6 +2,8 @@ import React, { PropTypes }  from 'react'
 
 import './App.css'
 
+import { X, O } from './constants'
+
 import Cell from './components/Cell'
 import ScoreBoard from './components/ScoreBoard'
 import Score from './components/Score'
@@ -11,9 +13,9 @@ import AppStyleWrapper from './components/styled/AppStyleWrapper'
 class App extends React.Component {
   static propTypes = {
     marks: PropTypes.arrayOf(
-      PropTypes.oneOf(['●', '✖', ''])
+      PropTypes.oneOf([O, X, ''])
     ).isRequired,
-    next: PropTypes.oneOf(['●', '✖'])
+    next: PropTypes.oneOf([O, X])
   }
 
   listCells() {
@@ -30,11 +32,11 @@ class App extends React.Component {
           {this.listCells()}
           <ScoreBoard>
             <Score>
-              <Cell mark="●" next="●" />
+              <Cell mark={O} next={O} />
               {7}
             </Score>
             <Score>
-              <Cell mark="✖" next="✖" />
+              <Cell mark={X} next={X} />
               {5}
             </Score>
           </ScoreBoard>
