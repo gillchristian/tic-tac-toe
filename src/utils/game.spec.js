@@ -187,7 +187,6 @@ describe('game', () => {
     it('returns the oposite mark', () => {
       expect(invert(O)).toBe(X)
       expect(invert(X)).toBe(O)
-      expect(invert('a')).toBe('a')
     })
   })
 

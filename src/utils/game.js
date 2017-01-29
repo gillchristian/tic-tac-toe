@@ -14,25 +14,29 @@ export const isMark = R.either(isO, isX)
 
 // invert :: Mark -> Mark
 export const invert = R.cond([
-  [isO, () => X],
-  [isX, () => O],
-  [R.T, R.identity]
+  [isO, R.always(X)],
+  [isX, R.always(O)]
 ])
 
 // genericCells :: Mark -> (Char -> Char)
 const genericCells = (m) => R.cond([
-  [R.equals(s), () => '.'],
-  [R.equals(m), () => '1'],
+  [R.equals(s), R.always('.')],
+  [R.equals(m), R.always('1')],
   [R.T,         R.identity]
 ])
 
-// genericBoard :: Mark -> ([Char] -> [Char])
+// genericBoard :: Mark -> ([Char] -> String)
 const genericBoard = R.compose(R.map, genericCells)
+
+//serializeOBoard :: [Char] -> String
+const serializeOBoard = R.compose(R.join(''), genericBoard(O))
+//serializeXBoard :: [Char] -> String
+const serializeXBoard = R.compose(R.join(''), genericBoard(X))
 
 // pickSerializer :: Mark -> ([Char] -> Char)
 const pickSerializer = R.cond([
-  [isO, () => R.compose(R.join(''), genericBoard(O))],
-  [isX, () => R.compose(R.join(''), genericBoard(X))]
+  [isO, R.always(serializeOBoard)],
+  [isX, R.always(serializeXBoard)]
 ])
 
 // serialize :: Mark -> [Char] -> String
