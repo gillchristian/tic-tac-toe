@@ -1,8 +1,7 @@
 import reducer, * as b from './board'
 
 import { X, O } from '../constants'
-import { _addMark } from '../actions/game'
-import { clearBoard } from '../actions/board'
+import { _addMark, startGame } from '../actions/game'
 
 describe('board', () => {
   describe('reducer', () => {
@@ -38,13 +37,13 @@ describe('board', () => {
       })
     })
 
-    describe('CLEAR_BOARD', () => {
+    describe('START_GAME', () => {
       it('sets the board blank', () => {
         let state = reducer(b.BOARD_STATE, _addMark(X, 0))
         state = reducer(state, _addMark(O, 5))
         state = reducer(state, _addMark(X, 8))
 
-        const actual = reducer(state, clearBoard())
+        const actual = reducer(state, startGame())
 
         expect(actual).toEqual(b.BOARD_STATE)
       })

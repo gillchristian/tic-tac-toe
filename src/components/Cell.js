@@ -32,13 +32,13 @@ const Wrapper = styled.div`
 
   &:hover {
     background-color: ${props => !props.mark && 'lightgray'};
-    cursor: ${props => !!props.mark && 'default'};
+    cursor: ${props => !props.next && 'default'};
 `
 
 class Cell extends React.Component {
   static propTypes = {
     mark: PropTypes.oneOf([O, X, '']),
-    next: PropTypes.oneOf([O, X])
+    next: PropTypes.oneOf([O, X, ''])
   }
 
   state = {

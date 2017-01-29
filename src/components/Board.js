@@ -29,15 +29,15 @@ const Wrapper = styled.div`
       0 20px 1px -9px rgba(0,0,0,0.15);
 `
 
-const Board = ({board, next, score, addMark}) => (
+const Board = ({board, next, score, addMark, isOver}) => (
   <Wrapper>
     {
       board.map((mark, key) => (
         <Cell
           key={key}
           mark={mark}
-          next={next}
-          onClick={() => !mark && addMark(next, key)}
+          next={isOver ? '' : next}
+          onClick={() => !mark && !isOver && addMark(next, key)}
         />
       ))
     }
@@ -55,6 +55,7 @@ const Board = ({board, next, score, addMark}) => (
 )
 
 Board.propTypes = {
+  isOver: PropTypes.bool,
   board: PropTypes.arrayOf(PropTypes.string).isRequired,
   next: PropTypes.oneOf([O, X]).isRequired,
   score: PropTypes.shape({

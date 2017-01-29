@@ -6,6 +6,7 @@ import { getBoard } from '../reducers/board'
 import { checkWinner, isFull } from '../utils/game'
 
 export const ADD_MARK = 'game:add:mark'
+export const START_GAME = 'game:set:started'
 export const FINISH_GAME = 'game:set:over'
 
 // __addMark :: Mark -> Int -> Redux.Action
@@ -17,6 +18,8 @@ export const _addMark = createAction(
 // finishGame :: Mark -> Redux.Action
 export const finishGame = createAction(FINISH_GAME)
 
+// startGame :: Mark -> Redux.Action
+export const startGame = createAction(START_GAME)
 
 // addMark :: Mark -> Int -> (Store.dispatch -> Store.getState -> *)
 export const addMark = (mark, pos) => (dispatch, getState) => {
