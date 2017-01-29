@@ -15,7 +15,7 @@ export default function next(state = NEXT_STATE, action) {
       return R.ifElse(
         isMark,
         invert,
-        () => state
+        R.always(state)
       )(getMark(action))
     default:
       return state

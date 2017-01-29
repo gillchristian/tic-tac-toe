@@ -1,6 +1,6 @@
 import reducer, * as s from './score'
-import { incrementScore } from '../actions/score'
-import { SCORE_INCREMENT } from '../actions/score'
+
+import { finishGame } from '../actions/game'
 
 import { X, O } from '../constants'
 
@@ -12,14 +12,14 @@ describe('score', () => {
         expect(s.SCORE_STATE[O]).toBe(0)
         expect(s.SCORE_STATE[X]).toBe(0)
 
-        let action = incrementScore(O)
+        let action = finishGame(O)
 
         let state = reducer(s.SCORE_STATE, action)
 
         expect(state[O]).toBe(1)
         expect(state[X]).toBe(0)
 
-        action = incrementScore(X)
+        action = finishGame(X)
 
         state = reducer(s.SCORE_STATE, action)
 
@@ -28,7 +28,7 @@ describe('score', () => {
       })
 
       it('does not add a new mark other than X & O', () => {
-        const action = incrementScore('✓')
+        const action = finishGame('✓')
 
         const state = reducer(s.SCORE_STATE, action)
 

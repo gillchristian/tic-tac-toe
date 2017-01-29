@@ -1,7 +1,7 @@
 import R from 'ramda'
 
 import { X, O } from '../constants'
-import { SCORE_INCREMENT } from '../actions/score'
+import { FINISH_GAME } from '../actions/game'
 
 export const SCORE_STATE = {
   [O]: 0,
@@ -10,7 +10,7 @@ export const SCORE_STATE = {
 
 export default function score(state = SCORE_STATE, action) {
   switch (action.type) {
-    case SCORE_INCREMENT:
+    case FINISH_GAME:
       return R.evolve({[action.payload]: R.inc}, state)
     default:
       return state
