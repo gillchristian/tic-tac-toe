@@ -1,37 +1,41 @@
 import reducer, * as s from './score'
 import { incrementScore } from '../actions/score'
+import { SCORE_INCREMENT } from '../actions/score'
 
 import { X, O } from '../constants'
 
 describe('score', () => {
-
   describe('reducer', () => {
-    it('increments the score of the provided mark', () => {
-      expect(s.SCORE_STATE[O]).toBe(0)
-      expect(s.SCORE_STATE[X]).toBe(0)
 
-      let action = incrementScore(O)
+    describe('SCORE_INCREMENT', () => {
+      it('increments the score of the provided mark', () => {
+        expect(s.SCORE_STATE[O]).toBe(0)
+        expect(s.SCORE_STATE[X]).toBe(0)
 
-      let state = reducer(s.SCORE_STATE, action)
+        let action = incrementScore(O)
 
-      expect(state[O]).toBe(1)
-      expect(state[X]).toBe(0)
+        let state = reducer(s.SCORE_STATE, action)
 
-      action = incrementScore(X)
+        expect(state[O]).toBe(1)
+        expect(state[X]).toBe(0)
 
-      state = reducer(s.SCORE_STATE, action)
+        action = incrementScore(X)
 
-      expect(state[O]).toBe(0)
-      expect(state[X]).toBe(1)
+        state = reducer(s.SCORE_STATE, action)
+
+        expect(state[O]).toBe(0)
+        expect(state[X]).toBe(1)
+      })
+
+      it('does not add a new mark other than X & O', () => {
+        const action = incrementScore('✓')
+
+        const state = reducer(s.SCORE_STATE, action)
+
+        expect(state).toEqual(s.SCORE_STATE)
+      })
     })
 
-    it('does not add a new mark other than X & O', () => {
-      const action = incrementScore('✓')
-
-      const state = reducer(s.SCORE_STATE, action)
-
-      expect(state).toEqual(s.SCORE_STATE)
-    })
   })
 
   describe('selectors', () => {
@@ -59,7 +63,7 @@ describe('score', () => {
         expect(s.getX(score)).toBe(1)
       })
     })
-  })
 
+  })
 })
 

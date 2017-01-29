@@ -1,5 +1,10 @@
 import R from 'ramda'
-import { checkWinner, serialize } from './game'
+import {
+  checkWinner,
+  serialize,
+  invert,
+  isMark
+} from './game'
 
 import { X, O, s, RESULTS } from '../constants/'
 
@@ -177,6 +182,15 @@ const cases = [
 ]
 
 describe('game', () => {
+
+  describe('invert', () => {
+    it('returns the oposite mark', () => {
+      expect(invert(O)).toBe(X)
+      expect(invert(X)).toBe(O)
+      expect(invert('a')).toBe('a')
+    })
+  })
+
   describe('checkWinner', () => {
 
     it('check if the provided mark wins the game', () => {
@@ -198,5 +212,16 @@ describe('game', () => {
     })
 
   })
+
+  describe('isMark', () => {
+
+    it('checks if the provided value is a Mark (X|O)', () => {
+      expect(isMark(O)).toBe(true)
+      expect(isMark(X)).toBe(true)
+      expect(isMark('a')).toBe(false)
+    })
+
+  })
+
 })
 

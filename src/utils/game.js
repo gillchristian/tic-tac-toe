@@ -5,9 +5,19 @@ import { X, O, s, RESULTS } from '../constants/'
 // Mark :: O|X
 
 // isO :: Mark -> Bool
-const isO = R.equals(O)
+export const isO = R.equals(O)
 // isX :: Mark -> Bool
-const isX = R.equals(X)
+export const isX = R.equals(X)
+
+// isMark :: Mark -> Bool
+export const isMark = R.either(isO, isX)
+
+// invert :: Mark -> Mark
+export const invert = R.cond([
+  [isO, () => X],
+  [isX, () => O],
+  [R.T, R.identity]
+])
 
 // genericCells :: Mark -> (Char -> Char)
 const genericCells = (m) => R.cond([
