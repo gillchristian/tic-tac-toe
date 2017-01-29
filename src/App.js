@@ -7,7 +7,7 @@ import { X, O } from './constants'
 import Cell from './components/Cell'
 import ScoreBoard from './components/ScoreBoard'
 import Score from './components/Score'
-import Board from './components/styled/Board'
+import Board from './components/Board'
 import AppStyleWrapper from './components/styled/AppStyleWrapper'
 
 class App extends React.Component {
