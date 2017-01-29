@@ -7,12 +7,7 @@ import Button from './styled/Button'
 const Notifications = ({ startGame, children }) => (
   <Alert>
     <span>{children}</span>
-    <Button onClick={
-      () => {
-        console.log('so?')
-        startGame()
-      }
-    }>Play Again</Button>
+    <Button onClick={startGame}>New Game</Button>
   </Alert>
 )
 
