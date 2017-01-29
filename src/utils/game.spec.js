@@ -121,6 +121,24 @@ const cases = [
     lastMove: X,
     expected: false
   },
+  {
+    board: R.flatten([
+      [O, O, X],
+      [O, X, X],
+      [X, O, X]
+    ]),
+    lastMove: X,
+    expected: true
+  },
+  {
+    board: R.flatten([
+      [X, s, O],
+      [O, O, s],
+      [X, X, X]
+    ]),
+    lastMove: X,
+    expected: true
+  },
 ]
 
 describe('checkWinner', () => {
