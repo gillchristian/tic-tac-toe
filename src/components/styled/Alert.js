@@ -1,21 +1,18 @@
 import styled from 'styled-components'
 
 const Alert = styled.div`
-  width: ${64*3 + 5*2*3 + 20*2}px;
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 220px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: whitesmoke;
-  border: 2px solid tomato;
-  border-top: 0;
   padding: 10px 15px;
-  border-radius: 0 0 14px 14px;
+  margin-top: 10px;
+  border: 2px solid tomato;
+  border-bottom: 0;
+  border-radius: 14px 14px 0 0;
+  background-color: whitesmoke;
   color: tomato;
-  font-size: 30px;
+  font-size: 24px;
 `
 
 export default Alert

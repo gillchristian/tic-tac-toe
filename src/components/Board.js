@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: ${64*3 + 5*2*3 + 20*2}px;
-  margin: 20px;
+  margin:  ${props => props.isOver ? '0 20px 20px' : '20px' };
   padding: 20px;
   border-radius: 14px;
   /* Paper stack box-shadow */
@@ -30,7 +30,7 @@ const Wrapper = styled.div`
 `
 
 const Board = ({board, next, score, addMark, isOver}) => (
-  <Wrapper>
+  <Wrapper isOver={isOver}>
     {
       board.map((mark, key) => (
         <Cell
