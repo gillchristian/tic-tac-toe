@@ -1,5 +1,5 @@
-export const O = '●'
-export const X = '✖'
+export const O = 'O'
+export const X = 'X'
 export const s = ''
 
 export const RESULTS = [

@@ -26,6 +26,7 @@ const Wrapper = styled.div`
   margin: 5px;
   font-weight: bold;
   font-size: 40px;
+  font-family: 'Gochi Hand', cursive;
   color: white;
   box-shadow: 0 2px 5px gray;
   user-select: none;

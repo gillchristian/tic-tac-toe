@@ -68,7 +68,7 @@ const cases = [
     ]),
     lastMove: X,
     expected: false,
-    serialized: '..●.●.●..'
+    serialized: '..O.O.O..'
   },
   {
     board: R.flatten([
@@ -88,7 +88,7 @@ const cases = [
     ]),
     lastMove: O,
     expected: true,
-    serialized: '1.✖1.✖1.✖'
+    serialized: '1.X1.X1.X'
   },
   {
     board: R.flatten([
@@ -98,7 +98,7 @@ const cases = [
     ]),
     lastMove: X,
     expected: true,
-    serialized: '●.1●.1●.1'
+    serialized: 'O.1O.1O.1'
   },
   {
     board: R.flatten([
@@ -108,7 +108,7 @@ const cases = [
     ]),
     lastMove: O,
     expected: true,
-    serialized: '111✖✖✖...'
+    serialized: '111XXX...'
   },
   {
     board: R.flatten([
@@ -118,7 +118,7 @@ const cases = [
     ]),
     lastMove: X,
     expected: true,
-    serialized: '●●●111...'
+    serialized: 'OOO111...'
   },
   {
     board: R.flatten([
@@ -128,7 +128,7 @@ const cases = [
     ]),
     lastMove: X,
     expected: false,
-    serialized: '●1●1●11●1'
+    serialized: 'O1O1O11O1'
   },
   {
     board: R.flatten([
@@ -138,7 +138,7 @@ const cases = [
     ]),
     lastMove: X,
     expected: false,
-    serialized: '●1●1●11●1'
+    serialized: 'O1O1O11O1'
   },
   {
     board: R.flatten([
@@ -148,7 +148,7 @@ const cases = [
     ]),
     lastMove: X,
     expected: true,
-    serialized: '●●1●111●1'
+    serialized: 'OO1O111O1'
   },
   {
     board: R.flatten([
@@ -158,7 +158,7 @@ const cases = [
     ]),
     lastMove: X,
     expected: true,
-    serialized: '1.●●●.111'
+    serialized: '1.OOO.111'
   },
   {
     board: R.flatten([
@@ -168,7 +168,7 @@ const cases = [
     ]),
     lastMove: X,
     expected: false,
-    serialized: '●●●●●●●●●'
+    serialized: 'OOOOOOOOO'
   },
   {
     board: R.flatten([

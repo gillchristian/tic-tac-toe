@@ -1,6 +1,6 @@
 exports[`board reducer ADD_MARK adds the provided mark on the provided position 1`] = `
 Array [
-  "✖",
+  "X",
   "",
   "",
   "",
@@ -14,8 +14,8 @@ Array [
 
 exports[`board reducer ADD_MARK adds the provided mark on the provided position 2`] = `
 Array [
-  "✖",
-  "●",
+  "X",
+  "O",
   "",
   "",
   "",
@@ -28,9 +28,9 @@ Array [
 
 exports[`board reducer ADD_MARK adds the provided mark on the provided position 3`] = `
 Array [
-  "✖",
-  "●",
-  "✖",
+  "X",
+  "O",
+  "X",
   "",
   "",
   "",
@@ -42,10 +42,10 @@ Array [
 
 exports[`board reducer ADD_MARK adds the provided mark on the provided position 4`] = `
 Array [
-  "✖",
-  "●",
-  "✖",
-  "●",
+  "X",
+  "O",
+  "X",
+  "O",
   "",
   "",
   "",
@@ -56,11 +56,11 @@ Array [
 
 exports[`board reducer ADD_MARK adds the provided mark on the provided position 5`] = `
 Array [
-  "✖",
-  "●",
-  "✖",
-  "●",
-  "✖",
+  "X",
+  "O",
+  "X",
+  "O",
+  "X",
   "",
   "",
   "",
@@ -70,12 +70,12 @@ Array [
 
 exports[`board reducer ADD_MARK adds the provided mark on the provided position 6`] = `
 Array [
-  "✖",
-  "●",
-  "✖",
-  "●",
-  "✖",
-  "●",
+  "X",
+  "O",
+  "X",
+  "O",
+  "X",
+  "O",
   "",
   "",
   "",
@@ -84,13 +84,13 @@ Array [
 
 exports[`board reducer ADD_MARK adds the provided mark on the provided position 7`] = `
 Array [
-  "✖",
-  "●",
-  "✖",
-  "●",
-  "✖",
-  "●",
-  "✖",
+  "X",
+  "O",
+  "X",
+  "O",
+  "X",
+  "O",
+  "X",
   "",
   "",
 ]
@@ -98,28 +98,28 @@ Array [
 
 exports[`board reducer ADD_MARK adds the provided mark on the provided position 8`] = `
 Array [
-  "✖",
-  "●",
-  "✖",
-  "●",
-  "✖",
-  "●",
-  "✖",
-  "●",
+  "X",
+  "O",
+  "X",
+  "O",
+  "X",
+  "O",
+  "X",
+  "O",
   "",
 ]
 `;
 
 exports[`board reducer ADD_MARK adds the provided mark on the provided position 9`] = `
 Array [
-  "✖",
-  "●",
-  "✖",
-  "●",
-  "✖",
-  "●",
-  "✖",
-  "●",
-  "✖",
+  "X",
+  "O",
+  "X",
+  "O",
+  "X",
+  "O",
+  "X",
+  "O",
+  "X",
 ]
 `;

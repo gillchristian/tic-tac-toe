@@ -1,7 +1,7 @@
 exports[`addMark creates an action with the provided mark as payoad 1`] = `
 Object {
   "payload": Object {
-    "mark": "●",
+    "mark": "O",
     "pos": 1,
   },
   "type": "game:add:mark",
@@ -11,7 +11,7 @@ Object {
 exports[`addMark creates an action with the provided mark as payoad 2`] = `
 Object {
   "payload": Object {
-    "mark": "✖",
+    "mark": "X",
     "pos": 0,
   },
   "type": "game:add:mark",
