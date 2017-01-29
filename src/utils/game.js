@@ -48,3 +48,7 @@ export const checkWinner = R.curry((mark, board) => R.any(
   RESULTS
 ))
 
+
+// isFull :: [Char] -> Bool
+export const isFull = R.all(isMark)
+
