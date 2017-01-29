@@ -1,0 +1,125 @@
+exports[`board reducer ADD_MARK adds the provided mark on the provided position 1`] = `
+Array [
+  "✖",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+]
+`;
+
+exports[`board reducer ADD_MARK adds the provided mark on the provided position 2`] = `
+Array [
+  "✖",
+  "●",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+]
+`;
+
+exports[`board reducer ADD_MARK adds the provided mark on the provided position 3`] = `
+Array [
+  "✖",
+  "●",
+  "✖",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+]
+`;
+
+exports[`board reducer ADD_MARK adds the provided mark on the provided position 4`] = `
+Array [
+  "✖",
+  "●",
+  "✖",
+  "●",
+  "",
+  "",
+  "",
+  "",
+  "",
+]
+`;
+
+exports[`board reducer ADD_MARK adds the provided mark on the provided position 5`] = `
+Array [
+  "✖",
+  "●",
+  "✖",
+  "●",
+  "✖",
+  "",
+  "",
+  "",
+  "",
+]
+`;
+
+exports[`board reducer ADD_MARK adds the provided mark on the provided position 6`] = `
+Array [
+  "✖",
+  "●",
+  "✖",
+  "●",
+  "✖",
+  "●",
+  "",
+  "",
+  "",
+]
+`;
+
+exports[`board reducer ADD_MARK adds the provided mark on the provided position 7`] = `
+Array [
+  "✖",
+  "●",
+  "✖",
+  "●",
+  "✖",
+  "●",
+  "✖",
+  "",
+  "",
+]
+`;
+
+exports[`board reducer ADD_MARK adds the provided mark on the provided position 8`] = `
+Array [
+  "✖",
+  "●",
+  "✖",
+  "●",
+  "✖",
+  "●",
+  "✖",
+  "●",
+  "",
+]
+`;
+
+exports[`board reducer ADD_MARK adds the provided mark on the provided position 9`] = `
+Array [
+  "✖",
+  "●",
+  "✖",
+  "●",
+  "✖",
+  "●",
+  "✖",
+  "●",
+  "✖",
+]
+`;
