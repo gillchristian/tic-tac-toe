@@ -1,7 +1,18 @@
+import R from 'ramda'
+
 import React, { PropTypes } from 'react'
 import styled from 'styled-components'
 
 import { X, O } from '../constants'
+
+const getCellColor = R.compose(
+  R.cond([
+    [R.equals(X), R.always('palevioletred')],
+    [R.equals(O), R.always('tomato')],
+    [R.T,         R.always('papayawhip')],
+  ]),
+  R.prop('mark')
+)
 
 const Wrapper = styled.div`
   display: flex;
@@ -17,6 +28,7 @@ const Wrapper = styled.div`
   font-size: 40px;
   color: white;
   box-shadow: 0 2px 5px gray;
+  user-select: none;
 
   &:hover {
     background-color: ${props => !props.mark && 'lightgray'};
@@ -34,15 +46,11 @@ class Cell extends React.Component {
   }
 
   mouseEnter = () => {
-    this.setState({
-      mouseIsOver: true
-    })
+    this.setState({ mouseIsOver: true })
   }
 
   mouseLeave = () => {
-    this.setState({
-      mouseIsOver: false
-    })
+    this.setState({ mouseIsOver: false })
   }
 
   render() {
@@ -52,15 +60,14 @@ class Cell extends React.Component {
       <Wrapper
         mark={mark}
         next={next}
+        onClick={this.props.onClick}
         onMouseEnter={this.mouseEnter}
         onMouseLeave={this.mouseLeave}
       >
         {
           mark
             ? mark
-            : this.state.mouseIsOver
-              ? next
-              : ''
+            : (this.state.mouseIsOver ? next : '')
         }
       </Wrapper>
     )
@@ -68,15 +75,4 @@ class Cell extends React.Component {
 }
 
 export default Cell
-
-function getCellColor(props) {
-  switch (props.mark) {
-    case X:
-      return 'palevioletred'
-    case O:
-      return 'tomato'
-    default:
-      return 'papayawhip'
-  }
-}
 

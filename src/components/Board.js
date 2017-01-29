@@ -1,6 +1,15 @@
+import React, { PropTypes } from 'react'
 import styled from 'styled-components'
 
-const Board = styled.div`
+import { X, O } from '../constants'
+import { getO, getX } from '../reducers/score'
+
+import Cell from './Cell'
+import ScoreBoard from './ScoreBoard'
+import Score from './Score'
+
+
+const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -20,4 +29,40 @@ const Board = styled.div`
       0 20px 1px -9px rgba(0,0,0,0.15);
 `
 
+const Board = ({board, next, score, addMark}) => (
+  <Wrapper>
+    {
+      board.map((mark, key) => (
+        <Cell
+          key={key}
+          mark={mark}
+          next={next}
+          onClick={() => addMark(next, key)}
+        />
+      ))
+    }
+    <ScoreBoard>
+      <Score>
+        <Cell mark={O} next={O} />
+        {getO(score)}
+      </Score>
+      <Score>
+        <Cell mark={X} next={X} />
+        {getX(score)}
+      </Score>
+    </ScoreBoard>
+  </Wrapper>
+)
+
+Board.propTypes = {
+  board: PropTypes.arrayOf(PropTypes.string).isRequired,
+  next: PropTypes.oneOf([O, X]).isRequired,
+  score: PropTypes.shape({
+    [X]: PropTypes.number,
+    [O]: PropTypes.number
+  }).isRequired,
+  addMark: PropTypes.func.isRequired
+}
+
 export default Board
+
