@@ -12,6 +12,6 @@ describe('incrementScore', function () {
 
     actual = incrementScore('✓')
     expect(actual).toMatchSnapshot()
-  });
-});
+  })
+})
 
