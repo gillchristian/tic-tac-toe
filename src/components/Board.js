@@ -37,7 +37,7 @@ const Board = ({board, next, score, addMark}) => (
           key={key}
           mark={mark}
           next={next}
-          onClick={() => addMark(next, key)}
+          onClick={() => !mark && addMark(next, key)}
         />
       ))
     }
