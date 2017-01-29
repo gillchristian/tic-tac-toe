@@ -1,6 +1,6 @@
 import R from 'ramda'
 
-import { X, O, RESULTS } from '../constants/'
+import { X, O, s, RESULTS } from '../constants/'
 
 // Mark :: O|X
 
@@ -10,11 +10,11 @@ const isO = R.equals(O)
 const isX = R.equals(X)
 
 // genericCells :: Mark -> (Char -> Char)
-const genericCells = (eq) => R.ifElse(
-  R.equals(eq),
-  () => '1',
-  () => '.'
-)
+const genericCells = (m) => R.cond([
+  [R.equals(s), () => '.'],
+  [R.equals(m), () => '1'],
+  [R.T,         R.identity]
+])
 
 // genericBoard :: Mark -> ([Char] -> [Char])
 const genericBoard = R.compose(R.map, genericCells)
@@ -26,12 +26,11 @@ const pickSerializer = R.cond([
 ])
 
 // serialize :: Mark -> [Char] -> String
-const serialize = (mark, board) => pickSerializer(mark)(board)
+export const serialize = (mark, board) => pickSerializer(mark)(board)
 
 // checkWinner :: Mark -> [Char] -> Bool
-export const checkWinner = R.curry(R.compose(
-  R.any(R.__, RESULTS),
-  R.equals,
-  serialize
+export const checkWinner = R.curry((mark, board) => R.any(
+  R.test(R.__, serialize(mark, board)),
+  RESULTS
 ))
 

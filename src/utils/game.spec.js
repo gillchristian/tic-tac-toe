@@ -1,5 +1,5 @@
 import R from 'ramda'
-import { checkWinner } from './game'
+import { checkWinner, serialize } from './game'
 
 import { X, O, s, RESULTS } from '../constants/'
 
@@ -11,7 +11,8 @@ const cases = [
       [s, s, s]
     ]),
     lastMove: O,
-    expected: false
+    expected: false,
+    serialized: '.........'
   },
   {
     board: R.flatten([
@@ -20,7 +21,8 @@ const cases = [
       [s, s, s]
     ]),
     lastMove: X,
-    expected: false
+    expected: false,
+    serialized: '.........'
   },
   {
     board: R.flatten([
@@ -29,7 +31,8 @@ const cases = [
       [s, s, s]
     ]),
     lastMove: O,
-    expected: false
+    expected: false,
+    serialized: '....1....'
   },
   {
     board: R.flatten([
@@ -38,7 +41,8 @@ const cases = [
       [s, s, s]
     ]),
     lastMove: X,
-    expected: false
+    expected: false,
+    serialized: '....1....'
   },
   {
     board: R.flatten([
@@ -47,7 +51,8 @@ const cases = [
       [s, s, X]
     ]),
     lastMove: X,
-    expected: true
+    expected: true,
+    serialized: '1...1...1'
   },
   {
     board: R.flatten([
@@ -56,7 +61,8 @@ const cases = [
       [O, s, s]
     ]),
     lastMove: X,
-    expected: false
+    expected: false,
+    serialized: '..●.●.●..'
   },
   {
     board: R.flatten([
@@ -65,7 +71,8 @@ const cases = [
       [O, s, s]
     ]),
     lastMove: O,
-    expected: true
+    expected: true,
+    serialized: '..1.1.1..'
   },
   {
     board: R.flatten([
@@ -74,7 +81,8 @@ const cases = [
       [O, s, X]
     ]),
     lastMove: O,
-    expected: true
+    expected: true,
+    serialized: '1.✖1.✖1.✖'
   },
   {
     board: R.flatten([
@@ -83,7 +91,8 @@ const cases = [
       [O, s, X]
     ]),
     lastMove: X,
-    expected: true
+    expected: true,
+    serialized: '●.1●.1●.1'
   },
   {
     board: R.flatten([
@@ -92,7 +101,8 @@ const cases = [
       [s, s, s]
     ]),
     lastMove: O,
-    expected: true
+    expected: true,
+    serialized: '111✖✖✖...'
   },
   {
     board: R.flatten([
@@ -101,7 +111,8 @@ const cases = [
       [s, s, s]
     ]),
     lastMove: X,
-    expected: true
+    expected: true,
+    serialized: '●●●111...'
   },
   {
     board: R.flatten([
@@ -110,7 +121,8 @@ const cases = [
       [X, O, X]
     ]),
     lastMove: X,
-    expected: false
+    expected: false,
+    serialized: '●1●1●11●1'
   },
   {
     board: R.flatten([
@@ -119,7 +131,8 @@ const cases = [
       [X, O, X]
     ]),
     lastMove: X,
-    expected: false
+    expected: false,
+    serialized: '●1●1●11●1'
   },
   {
     board: R.flatten([
@@ -128,7 +141,8 @@ const cases = [
       [X, O, X]
     ]),
     lastMove: X,
-    expected: true
+    expected: true,
+    serialized: '●●1●111●1'
   },
   {
     board: R.flatten([
@@ -137,18 +151,52 @@ const cases = [
       [X, X, X]
     ]),
     lastMove: X,
-    expected: true
+    expected: true,
+    serialized: '1.●●●.111'
+  },
+  {
+    board: R.flatten([
+      [O, O, O],
+      [O, O, O],
+      [O, O, O]
+    ]),
+    lastMove: X,
+    expected: false,
+    serialized: '●●●●●●●●●'
+  },
+  {
+    board: R.flatten([
+      [O, O, O],
+      [O, O, O],
+      [O, O, O]
+    ]),
+    lastMove: O,
+    expected: true,
+    serialized: '111111111'
   },
 ]
 
-describe('checkWinner', () => {
+describe('game', () => {
+  describe('checkWinner', () => {
 
-  it('check if the provided mark wins the game', () => {
-    cases.forEach(_case => {
-      const actual = checkWinner(_case.lastMove, _case.board)
-      expect(actual).toBe(_case.expected)
+    it('check if the provided mark wins the game', () => {
+      cases.forEach(_case => {
+        const actual = checkWinner(_case.lastMove, _case.board)
+        expect(actual).toBe(_case.expected)
+      })
     })
+
   })
 
+  describe('serialize', () => {
+
+    it('serializes the board into a string, replacing empty cells for dots & current mark for 1s', () => {
+      cases.forEach(_case => {
+        const actual = serialize(_case.lastMove, _case.board)
+        expect(actual).toBe(_case.serialized)
+      })
+    })
+
+  })
 })
 
