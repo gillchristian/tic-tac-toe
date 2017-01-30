@@ -4,6 +4,8 @@
   "private": true,
   "homepage": "https://gillchristian.github.io/tic-tac-toe",
   "devDependencies": {
+    "enzyme": "^2.7.1",
+    "enzyme-to-json": "^1.4.5",
     "react-scripts": "0.8.5"
   },
   "dependencies": {
