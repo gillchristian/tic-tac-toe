@@ -1,4 +1,4 @@
-exports[`addMark creates an action with the provided mark as payoad 1`] = `
+exports[`_addMark creates a add-mark action 1`] = `
 Object {
   "payload": Object {
     "mark": "O",
@@ -8,7 +8,7 @@ Object {
 }
 `;
 
-exports[`addMark creates an action with the provided mark as payoad 2`] = `
+exports[`_addMark creates a add-mark action 2`] = `
 Object {
   "payload": Object {
     "mark": "X",
@@ -18,12 +18,39 @@ Object {
 }
 `;
 
-exports[`addMark creates an action with the provided mark as payoad 3`] = `
+exports[`_addMark creates a add-mark action 3`] = `
 Object {
   "payload": Object {
     "mark": "✓",
     "pos": 5,
   },
   "type": "game:add:mark",
+}
+`;
+
+exports[`finishGame creates a finish-game action 1`] = `
+Object {
+  "payload": "O",
+  "type": "game:set:over",
+}
+`;
+
+exports[`finishGame creates a finish-game action 2`] = `
+Object {
+  "payload": "X",
+  "type": "game:set:over",
+}
+`;
+
+exports[`finishGame creates a finish-game action 3`] = `
+Object {
+  "payload": null,
+  "type": "game:set:over",
+}
+`;
+
+exports[`startGame creates a start-game action 1`] = `
+Object {
+  "type": "game:set:started",
 }
 `;

@@ -48,7 +48,6 @@ export const checkWinner = (board, mark) => R.any(
   RESULTS
 )
 
-
 // isFull :: [Char] -> Bool
 export const isFull = R.all(isMark)
 
