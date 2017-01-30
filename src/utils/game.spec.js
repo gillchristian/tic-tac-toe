@@ -192,9 +192,9 @@ describe('game', () => {
   })
 
   describe('checkWinner', () => {
-    it('check if the provided mark wins the game', () => {
+    it('checks if the provided mark wins the game', () => {
       cases.forEach(_case => {
-        const actual = checkWinner(_case.lastMove, _case.board)
+        const actual = checkWinner(_case.board, _case.lastMove)
         expect(actual).toBe(_case.expected)
       })
     })
@@ -203,7 +203,7 @@ describe('game', () => {
   describe('serialize', () => {
     it('serializes the board into a string, replacing empty cells for dots & current mark for 1s', () => {
       cases.forEach(_case => {
-        const actual = serialize(_case.lastMove, _case.board)
+        const actual = serialize(_case.board, _case.lastMove)
         expect(actual).toBe(_case.serialized)
       })
     })

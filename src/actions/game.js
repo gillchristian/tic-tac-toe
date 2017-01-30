@@ -28,8 +28,8 @@ export const addMark = (mark, pos) => (dispatch, getState) => {
   const newBoard = getBoard(getState())
 
   R.cond([
-    [R.flip(checkWinner), () => dispatch(finishGame(mark))],
-    [isFull,              () => dispatch(finishGame(null))],
+    [checkWinner, () => dispatch(finishGame(mark))],
+    [isFull,      () => dispatch(finishGame(null))],
   ])(newBoard, mark)
 }
 

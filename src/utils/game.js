@@ -39,14 +39,14 @@ const pickSerializer = R.cond([
   [isX, R.always(serializeXBoard)]
 ])
 
-// serialize :: Mark -> [Char] -> String
-export const serialize = (mark, board) => pickSerializer(mark)(board)
+// serialize :: [Char] -> Mark -> String
+export const serialize = (board, mark) => pickSerializer(mark)(board)
 
-// checkWinner :: Mark -> [Char] -> Bool
-export const checkWinner = R.curry((mark, board) => R.any(
-  R.test(R.__, serialize(mark, board)),
+// checkWinner :: [Char] -> Mark -> Bool
+export const checkWinner = (board, mark) => R.any(
+  R.test(R.__, serialize(board, mark)),
   RESULTS
-))
+)
 
 
 // isFull :: [Char] -> Bool
