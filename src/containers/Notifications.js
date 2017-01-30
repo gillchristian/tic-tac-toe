@@ -18,7 +18,7 @@ const mapDispatchToProps = {
 }
 
 const NotificationsContainer = ({ isOver, startGame, winner }) => isOver
-  ? <Notifications startGame={startGame}>
+  ? <Notifications startGame={() => startGame(winner)}>
       <EndingMessage>{winner}</EndingMessage>
     </Notifications>
   : null
