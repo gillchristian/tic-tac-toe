@@ -1,0 +1,10 @@
+exports[`Notifications container Renders the Notifications component when the game is over, or null if not over 1`] = `
+<Notifications
+  startGame={[Function]}>
+  <Message>
+    X
+  </Message>
+</Notifications>
+`;
+
+exports[`Notifications container Renders the Notifications component when the game is over, or null if not over 2`] = `null`;

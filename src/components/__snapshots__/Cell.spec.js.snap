@@ -1,0 +1,26 @@
+exports[`Cell renders ok 1`] = `
+<styled.div
+  mark="O"
+  next="X"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}>
+  O
+</styled.div>
+`;
+
+exports[`Cell renders the mark if present, or the next mark on hover if present 1`] = `
+<styled.div
+  mark=""
+  next="X"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]} />
+`;
+
+exports[`Cell renders the mark if present, or the next mark on hover if present 2`] = `
+<styled.div
+  mark=""
+  next=""
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]} />
+`;
+

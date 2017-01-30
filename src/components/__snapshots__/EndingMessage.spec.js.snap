@@ -1,0 +1,33 @@
+exports[`EndingMessage renders a different message for each mark & when empty 1`] = `
+<span>
+  <styled.span>
+    O
+  </styled.span>
+   wins!
+</span>
+`;
+
+exports[`EndingMessage renders a different message for each mark & when empty 2`] = `
+<span>
+  <styled.span>
+    X
+  </styled.span>
+   wins!
+</span>
+`;
+
+exports[`EndingMessage renders a different message for each mark & when empty 3`] = `
+<span>
+  Its a draw!
+</span>
+`;
+
+exports[`EndingMessage renders ok 1`] = `
+<span>
+  <styled.span>
+    X
+  </styled.span>
+   wins!
+</span>
+`;
+

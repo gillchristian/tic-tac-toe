@@ -5,8 +5,8 @@ import { X, O } from '../constants'
 import { getO, getX } from '../reducers/score'
 
 import Cell from './Cell'
-import ScoreBoard from './ScoreBoard'
-import Score from './Score'
+import ScoreBoard from './styled/ScoreBoard'
+import Score from './styled/Score'
 
 
 const Wrapper = styled.div`

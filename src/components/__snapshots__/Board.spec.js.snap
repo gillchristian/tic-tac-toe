@@ -51,3 +51,4 @@ exports[`Board renders ok 1`] = `
   </styled.div>
 </styled.div>
 `;
+
