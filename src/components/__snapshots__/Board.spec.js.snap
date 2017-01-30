@@ -1,0 +1,53 @@
+exports[`Board renders ok 1`] = `
+<styled.div
+  isOver={false}>
+  <Cell
+    mark=""
+    next="X"
+    onClick={[Function]} />
+  <Cell
+    mark=""
+    next="X"
+    onClick={[Function]} />
+  <Cell
+    mark="X"
+    next="X"
+    onClick={[Function]} />
+  <Cell
+    mark=""
+    next="X"
+    onClick={[Function]} />
+  <Cell
+    mark="O"
+    next="X"
+    onClick={[Function]} />
+  <Cell
+    mark=""
+    next="X"
+    onClick={[Function]} />
+  <Cell
+    mark=""
+    next="X"
+    onClick={[Function]} />
+  <Cell
+    mark=""
+    next="X"
+    onClick={[Function]} />
+  <Cell
+    mark=""
+    next="X"
+    onClick={[Function]} />
+  <styled.div>
+    <styled.div>
+      <Cell
+        mark="O"
+        next="O" />
+    </styled.div>
+    <styled.div>
+      <Cell
+        mark="X"
+        next="X" />
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;
