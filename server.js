@@ -10,10 +10,14 @@ import App from './src/components/App'
 const assets = require('./docs/asset-manifest.json')
 
 const app = Express()
+
 const port = process.env.PORT || 3000
 
+//const basePath = process.env.NODE_ENV === 'production' ? '' : '/tic-tac-toe'
+const basePath = '/tic-tac-toe'
+
 //Serve static files
-app.use('/tic-tac-toe/static', Express.static('docs/static'));
+app.use(`${basePath}/static`, Express.static('docs/static'));
 
 // This is fired every time the server side receives a request
 app.use(handleRender)
@@ -39,8 +43,6 @@ function handleRender(req, res) {
   // Send the rendered page back to the client
   res.send(renderFullPage(html, preloadedState))
 }
-
-const basePath = process.env.NODE_ENV === 'production' ? '' : '/tic-tac-toe'
 
 function renderFullPage(html, preloadedState) {
   return `
