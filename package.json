@@ -9,6 +9,7 @@
     "react-scripts": "0.8.5"
   },
   "dependencies": {
+    "express": "^4.15.2",
     "ramda": "^0.23.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
@@ -21,6 +22,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "eject": "react-scripts eject",
     "build": "react-scripts build; rm -r docs; mv build docs",
     "test": "react-scripts test --env=jsdom"
   }
