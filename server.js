@@ -10,13 +10,17 @@ import App from './src/components/App'
 const assets = require('./docs/asset-manifest.json')
 
 const app = Express()
-const port = 3000
+const port = process.env.PORT || 3000
 
 //Serve static files
-app.use('/static', Express.static('docs/static'));
+app.use('/tic-tac-toe/static', Express.static('docs/static'));
 
 // This is fired every time the server side receives a request
 app.use(handleRender)
+
+app.listen(port)
+
+// -------------- handlers & helpers --------------
 
 function handleRender(req, res) {
   // Create a new Redux store instance
@@ -36,6 +40,8 @@ function handleRender(req, res) {
   res.send(renderFullPage(html, preloadedState))
 }
 
+const basePath = process.env.NODE_ENV === 'production' ? '' : '/tic-tac-toe'
+
 function renderFullPage(html, preloadedState) {
   return `
     <!doctype html>
@@ -45,7 +51,7 @@ function renderFullPage(html, preloadedState) {
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Tic Tac Toe</title>
         <link href="https://fonts.googleapis.com/css?family=Gochi+Hand" rel="stylesheet">
-        <link href="/tic-tac-toe/${assets['main.css']}" rel="stylesheet">
+        <link href="${basePath}/${assets['main.css']}" rel="stylesheet">
       </head>
       <body>
         <div id="root">${html}</div>
@@ -54,10 +60,9 @@ function renderFullPage(html, preloadedState) {
           // http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations
           window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
         </script>
-        <script type="text/javascript" src="/tic-tac-toe/${assets['main.js']}"></script>
+        <script type="text/javascript" src="${basePath}/${assets['main.js']}"></script>
       </body>
     </html>
     `
 }
 
-app.listen(port)
