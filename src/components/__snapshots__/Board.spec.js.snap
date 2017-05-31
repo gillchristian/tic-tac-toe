@@ -1,54 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Board renders ok 1`] = `
 <styled.div
-  isOver={false}>
+  isOver={false}
+>
   <Cell
     mark=""
     next="X"
-    onClick={[Function]} />
+    onClick={[Function]}
+  />
   <Cell
     mark=""
     next="X"
-    onClick={[Function]} />
+    onClick={[Function]}
+  />
   <Cell
     mark="X"
     next="X"
-    onClick={[Function]} />
+    onClick={[Function]}
+  />
   <Cell
     mark=""
     next="X"
-    onClick={[Function]} />
+    onClick={[Function]}
+  />
   <Cell
     mark="O"
     next="X"
-    onClick={[Function]} />
+    onClick={[Function]}
+  />
   <Cell
     mark=""
     next="X"
-    onClick={[Function]} />
+    onClick={[Function]}
+  />
   <Cell
     mark=""
     next="X"
-    onClick={[Function]} />
+    onClick={[Function]}
+  />
   <Cell
     mark=""
     next="X"
-    onClick={[Function]} />
+    onClick={[Function]}
+  />
   <Cell
     mark=""
     next="X"
-    onClick={[Function]} />
+    onClick={[Function]}
+  />
   <styled.div>
     <styled.div>
       <Cell
         mark="O"
-        next="O" />
+        next="O"
+      />
+      0
     </styled.div>
     <styled.div>
       <Cell
         mark="X"
-        next="X" />
+        next="X"
+      />
+      0
     </styled.div>
   </styled.div>
 </styled.div>
 `;
-

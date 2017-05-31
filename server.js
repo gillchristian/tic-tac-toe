@@ -22,11 +22,17 @@ app.use(`${basePath}/static`, Express.static('docs/static'));
 // This is fired every time the server side receives a request
 app.use(handleRender)
 
-app.listen(port)
+app.listen(port, () => {
+  console.log(`--- Listening on PORT ${port} \\o/`)
+  console.log(`--- Open http://localhost:${port}\n`)
+})
 
 // -------------- handlers & helpers --------------
 
 function handleRender(req, res) {
+
+  console.log(`${new Date()} ${req.method}: ${req.url}`)
+
   // Create a new Redux store instance
   const store = createStore(rootReducer)
 

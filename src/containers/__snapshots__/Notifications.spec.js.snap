@@ -1,6 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Notifications container Renders the Notifications component when the game is over, or null if not over 1`] = `
 <Notifications
-  startGame={[Function]}>
+  startGame={[Function]}
+>
   <Message>
     X
   </Message>

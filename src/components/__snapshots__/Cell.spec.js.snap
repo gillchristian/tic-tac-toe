@@ -1,9 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Cell renders ok 1`] = `
 <styled.div
   mark="O"
   next="X"
   onMouseEnter={[Function]}
-  onMouseLeave={[Function]}>
+  onMouseLeave={[Function]}
+>
   O
 </styled.div>
 `;
@@ -13,7 +16,8 @@ exports[`Cell renders the mark if present, or the next mark on hover if present 
   mark=""
   next="X"
   onMouseEnter={[Function]}
-  onMouseLeave={[Function]} />
+  onMouseLeave={[Function]}
+/>
 `;
 
 exports[`Cell renders the mark if present, or the next mark on hover if present 2`] = `
@@ -21,6 +25,6 @@ exports[`Cell renders the mark if present, or the next mark on hover if present 
   mark=""
   next=""
   onMouseEnter={[Function]}
-  onMouseLeave={[Function]} />
+  onMouseLeave={[Function]}
+/>
 `;
-

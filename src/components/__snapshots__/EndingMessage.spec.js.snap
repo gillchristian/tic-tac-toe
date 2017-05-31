@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`EndingMessage renders a different message for each mark & when empty 1`] = `
 <span>
   <styled.span>
@@ -30,4 +32,3 @@ exports[`EndingMessage renders ok 1`] = `
    wins!
 </span>
 `;
-
