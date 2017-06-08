@@ -5,14 +5,11 @@ import styled from 'styled-components'
 
 import { X, O } from '../constants'
 
-const getCellColor = R.compose(
-  R.cond([
-    [R.equals(X), R.always('palevioletred')],
-    [R.equals(O), R.always('tomato')],
-    [R.T,         R.always('papayawhip')],
-  ]),
-  R.prop('mark')
-)
+const getCellColor = (p) => R.cond([
+  [R.equals(X), R.always(p.theme.secondary)],
+  [R.equals(O), R.always(p.theme.main)],
+  [R.T,         R.always('papayawhip')],
+])(p.mark)
 
 const Wrapper = styled.div`
   display: flex;

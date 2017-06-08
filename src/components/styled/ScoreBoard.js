@@ -12,3 +12,4 @@ const ScoreBoard = styled.div`
 
 export default ScoreBoard
 
+

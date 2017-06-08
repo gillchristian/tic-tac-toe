@@ -8,6 +8,8 @@ const AppStyleWrapper = styled.div`
   width: 100%;
   height: 100%;
   font-family: Helvetica;
+
+  background-color: ${p => p.theme.bg};
 `
 export default AppStyleWrapper
 

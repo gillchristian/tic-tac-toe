@@ -7,11 +7,11 @@ const Alert = styled.div`
   align-items: center;
   padding: 10px 15px;
   margin-top: 10px;
-  border: 2px solid tomato;
+  border: 2px solid ${p => p.theme.main};
   border-bottom: 0;
   border-radius: 14px 14px 0 0;
   background-color: whitesmoke;
-  color: tomato;
+  color: ${p => p.theme.main};
   font-size: 24px;
 `
 
