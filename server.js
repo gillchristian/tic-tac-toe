@@ -1,5 +1,6 @@
 import Express from 'express'
 import React from 'react'
+import { ServerStyleSheet } from 'styled-components'
 import { renderToString } from 'react-dom/server'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
@@ -13,7 +14,6 @@ const app = Express()
 
 const port = process.env.PORT || 3000
 
-//const basePath = process.env.NODE_ENV === 'production' ? '' : '/tic-tac-toe'
 const basePath = '/tic-tac-toe'
 
 //Serve static files
@@ -35,22 +35,24 @@ function handleRender(req, res) {
 
   // Create a new Redux store instance
   const store = createStore(rootReducer)
+  const sheet = new ServerStyleSheet()
 
   // Render the component to a string
-  const html = renderToString(
+  const html = renderToString(sheet.collectStyles(
     <Provider store={store}>
       <App />
     </Provider>
-  )
+  ))
+  const css = sheet.getStyleTags()
 
   // Grab the initial state from our Redux store
   const preloadedState = store.getState()
 
   // Send the rendered page back to the client
-  res.send(renderFullPage(html, preloadedState))
+  res.send(renderFullPage(html, preloadedState, css))
 }
 
-function renderFullPage(html, preloadedState) {
+function renderFullPage(html, preloadedState, css) {
   return `
     <!doctype html>
     <html>
@@ -60,6 +62,7 @@ function renderFullPage(html, preloadedState) {
         <title>Tic Tac Toe</title>
         <link href="https://fonts.googleapis.com/css?family=Gochi+Hand" rel="stylesheet">
         <link href="${basePath}/${assets['main.css']}" rel="stylesheet">
+        <style>${css}</style>
       </head>
       <body>
         <div id="root">${html}</div>
