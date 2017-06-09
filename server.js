@@ -15,7 +15,7 @@ const app = Express()
 
 const port = process.env.PORT || 3000
 
-const basePath = '/tic-tac-toe'
+const basePath = '/tic-tac-toe-glam'
 
 //Serve static files
 app.use(`${basePath}/static`, Express.static('docs/static'));
