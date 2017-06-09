@@ -6,7 +6,7 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
 import rootReducer from './src/reducers'
-import App from './src/components/App'
+import App from './src/containers/App'
 
 const assets = require('./docs/asset-manifest.json')
 
