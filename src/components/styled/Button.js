@@ -9,6 +9,10 @@ const Button = styled.button`
   border-radius: 3px;
   background-color: whitesmoke;
   cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
 `
 
 export default Button
