@@ -1,7 +1,8 @@
 import Express from 'express'
 import React from 'react'
-import { ServerStyleSheet } from 'styled-components'
 import { renderToString } from 'react-dom/server'
+import { renderStaticOptimized } from 'glamor/server'
+
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
@@ -35,24 +36,22 @@ function handleRender(req, res) {
 
   // Create a new Redux store instance
   const store = createStore(rootReducer)
-  const sheet = new ServerStyleSheet()
 
   // Render the component to a string
-  const html = renderToString(sheet.collectStyles(
+  const { html, css, ids } = renderStaticOptimized(() => renderToString(
     <Provider store={store}>
       <App />
     </Provider>
   ))
-  const css = sheet.getStyleTags()
 
   // Grab the initial state from our Redux store
   const preloadedState = store.getState()
 
   // Send the rendered page back to the client
-  res.send(renderFullPage(html, preloadedState, css))
+  res.send(renderFullPage(html, preloadedState, css, ids))
 }
 
-function renderFullPage(html, preloadedState, css) {
+function renderFullPage(html, preloadedState, css, ids) {
   return `
     <!doctype html>
     <html>
@@ -65,6 +64,10 @@ function renderFullPage(html, preloadedState, css) {
         <style>${css}</style>
       </head>
       <body>
+        <script>
+          // lets glam rehydrate styles
+          window._glam = ${JSON.stringify(ids)}
+        </script>
         <div id="root">${html}</div>
         <script>
           // WARNING: See the following for security issues around embedding JSON in HTML:

@@ -1,19 +1,25 @@
-import styled from 'styled-components'
+import glamorous from 'glamorous'
 
-const Alert = styled.div`
-  width: 220px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px 15px;
-  margin-top: 10px;
-  border: 2px solid ${p => p.theme.main};
-  border-bottom: 0;
-  border-radius: 14px 14px 0 0;
-  background-color: whitesmoke;
-  color: ${p => p.theme.main};
-  font-size: 24px;
-`
+const Alert = glamorous.div(
+  {
+    width: 200,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: '10px 15px',
+    marginTop: 10,
+    borderWidth: 2,
+    borderStyle: 'solid',
+    borderBottom: 0,
+    borderRadius: '14px 14px 0 0',
+    backgroundColor: 'whitesmoke',
+    fontSize: 24,
+  },
+  (props, theme) => ({
+    borderColor: theme.main,
+    color: theme.main,
+  })
+)
 
 export default Alert
 

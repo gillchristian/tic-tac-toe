@@ -1,15 +1,15 @@
 import R from 'ramda'
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import glamorous from 'glamorous'
 
 import { isO, isX, isMark } from '../utils/game'
 import { X, O } from '../constants'
 
-const Span = styled.span`
-  font-family: 'Gochi Hand', cursive;
-  font-size: 1.2em;
-`
+const Span = glamorous.span({
+  fontFamily: '"Gochi Hand", cursive',
+  fontSize: '1.2em',
+})
 
 const Message = ({children}) => (
   <span>

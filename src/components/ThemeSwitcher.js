@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import glamorous from 'glamorous'
 
 import Button from './styled/Button'
 
-const Wrapper = styled.div`
-  position: fixed;
-  top: 10px;
-  right: 10px;
-`
+const Wrapper = glamorous.div({
+  position: 'fixed',
+  top: 10,
+  right: 10,
+})
 
 const ThemeSwitcher = ({ switchTheme, current = 'light' }) => (
   <Wrapper>

@@ -1,5 +1,5 @@
 import React  from 'react'
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'glamorous'
 
 import Board from '../containers/Board'
 import Notifications from '../containers/Notifications'

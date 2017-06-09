@@ -1,19 +1,24 @@
-import styled from 'styled-components'
+import glamorous from 'glamorous'
 
-const Button = styled.button`
-  color: ${p => p.theme.secondary};
-  font-size: 16px;
-  margin: 10px 10px 5px;
-  padding: 5px 10px;
-  border: 2px solid ${p => p.theme.secondary};
-  border-radius: 3px;
-  background-color: whitesmoke;
-  cursor: pointer;
-
-  &:focus {
-    outline: none;
-  }
-`
+const Button = glamorous.button(
+  {
+    fontSize: 16,
+    margin: '10px 10px 5px',
+    padding: '5px 10px',
+    borderWidth: 2,
+    borderStyle: 'solid',
+    borderRadius: 3,
+    backgroundColor: 'whitesmoke',
+    cursor: 'pointer',
+    ':focus': {
+      outline: 'none',
+    },
+  },
+  (props, theme) => ({
+    color: theme.secondary,
+    borderColor: theme.secondary,
+  }),
+)
 
 export default Button
 

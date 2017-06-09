@@ -1,16 +1,18 @@
-import styled from 'styled-components'
+import glamorous from 'glamorous'
 
-const Score = styled.div`
-  margin: 0 10px;
-  padding: 5px;
-  font-size: 40px;
-  font-weight: bold;
-  color: #bbb;
+const Score = glamorous.div(
+  {
+    margin: '0 10px',
+    padding: 5,
+    fontSize: 40,
+    fontWeight: 'bold',
+    color: '#bbb',
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  }
+)
 
 export default Score
 
