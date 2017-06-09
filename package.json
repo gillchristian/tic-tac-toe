@@ -52,6 +52,8 @@
   },
   "dependencies": {
     "express": "^4.15.3",
+    "glamor": "^2.20.25",
+    "glamorous": "^3.22.1",
     "prop-types": "^15.5.10",
     "ramda": "^0.24.0",
     "react": "^15.5.4",
@@ -60,8 +62,7 @@
     "redux": "^3.6.0",
     "redux-actions": "^2.0.3",
     "redux-thunk": "^2.2.0",
-    "reselect": "^3.0.1",
-    "styled-components": "^2.0.0"
+    "reselect": "^3.0.1"
   },
   "scripts": {
     "serve": "NODE_ENV='development' babel-node server",
