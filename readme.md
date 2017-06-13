@@ -236,11 +236,6 @@ Both libraries require not so much effort to learn. They only require some basic
 
 ### Server side rendering
 
-**styled-components**
+This is also a point well covered by both libraries. `styled-componets` added a great support for it in the `v2` with stylesheet rehydration and only generating the styles being rendered. `glamorous` supports SSR via [`glam`]() and [`glamour`](), its the core modules, which also supports style rehydration only generating the styles being rendered.
 
-**glamorous**
-
-### Implementation / How it works / Bundle size
-
-- `styled-components`:
-- `glamorous`:
+The most basic case is covered [here](https://github.com/gillchristian/tic-tac-toe/blob/master/server.js#L32-L53) and [here](https://github.com/gillchristian/tic-tac-toe/blob/glamorous/server.js#L33-L52), based on respectives docs.
