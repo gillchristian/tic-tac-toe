@@ -248,8 +248,8 @@ The most basic case is covered [here](https://github.com/gillchristian/tic-tac-t
 
 ```js
 const Link = styled.a.attrs({
-  rel: props => props.external || 'noreferrer noopener',
-  target: props => props.external || '_blank',
+  rel: props => props.external && 'noreferrer noopener',
+  target: props => props.external && '_blank',
 })`
   color: tomato;
 `;
@@ -271,9 +271,9 @@ In addition to the SSR support `styled-components` provides a [babel plugin](htt
 
 > - Not to ship a CSS parser to the browser.
 
-`glamorous` gzipped: `7.84kb` 
+`glamorous` gzipped: `7.84kb`. Deppends on `glamour` gzipped: `9.45kb`.  Total: `17.89kb`.
 
-`styled-components` gzipped: `13.3kb` 
+`styled-components` gzipped: `13.3kb`.
 
 As of `v2` `styled-components` is using a different parsed called [`stylis`](https://github.com/thysultan/stylis.js). A lightweight (3kb) CSS preprocesor. Also there's [experimental work](https://github.com/styled-components/babel-plugin-styled-components#preprocessing-experimental-️-) on dropping the parse in favor of doing it at compile time with babel.
 
@@ -284,3 +284,13 @@ This is only relevant if required.
 > - Support for using real JavaScript objects rather than a CSS string (better tooling support, ESLint, etc.).
 
 While this is true, there are yet any tools to validating style objects yet, at least not that I know of. On the other hand `styled-componets` has support for [`linting`](https://github.com/styled-components/styled-components#linting) & ['syntax highlighting'](https://github.com/styled-components/styled-components#syntax-highlighting) for many editors.
+
+#### Tiny version
+
+`glamorous` offers a [tiny version](https://github.com/paypal/glamorous#size) at the cost of some features.
+
+## Conclusion
+
+`styled-components` and `glamorous` are built on the same paradigm and using them would result in the same benefit: reusing styles by reusing components.
+
+At the end choosing one or the other comes down to either the very few differences or a matter of taste: real CSS in tagged template literals vs. JS objects.
