@@ -196,10 +196,23 @@ const StyledLink = styled(Link)`
 
 **glamorous**:
 
-Does not provide a way to extend components like `styled-component` does. But style objects can be reused and also the factory can be applied to other components:
+Does not provide a way to extend components like `styled-component` does. But it provides the [`.withComponent`](https://github.com/paypal/glamorous#withcomponent) method and also style objects can be reused and also the factory can be applied to other components:
 
 ```js
 import glamorous from 'glamorous'
+
+const Button = glamorous.button({
+  color: 'palevioletred',
+  border: '2px solid palevioletred',
+  border-radius: 3,
+});
+
+const Link = Button.withComponent('a')
+
+const TomatoLink = Link.extend`
+	color: tomato;
+	border-color: tomato;
+`;
 
 const someCSS = { 
   display: 'flex',
