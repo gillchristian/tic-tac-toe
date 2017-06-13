@@ -239,3 +239,40 @@ Both libraries require not so much effort to learn. They only require some basic
 This is also a point well covered by both libraries. `styled-componets` added a great support for it in the `v2` with stylesheet rehydration and only generating the styles being rendered. `glamorous` supports SSR via [`glam`]() and [`glamour`](), its the core modules, which also supports style rehydration only generating the styles being rendered.
 
 The most basic case is covered [here](https://github.com/gillchristian/tic-tac-toe/blob/master/server.js#L32-L53) and [here](https://github.com/gillchristian/tic-tac-toe/blob/glamorous/server.js#L33-L52), based on respectives docs.
+
+### Important differences
+
+- `.attrs`: `styled-components` offers a way to set props, either static or dynamically by using functions.
+
+```js
+const Link = styled.a.attrs({
+  rel: props => props.external || 'noreferrer noopener',
+  target: props => props.external || '_blank',
+})`
+  color: tomato;
+`;
+
+const PasswordInput = styled.input.attrs({
+  type: 'password',
+})`
+  color: tomato;
+`;
+```
+
+- In addition to the SSR support `styled-components` provides a [babel plugin](https://github.com/styled-components/babel-plugin-styled-components) to enable styles minification on SSR for production and some other goodies.
+
+- `glamorous` [inspiration](https://github.com/paypal/glamorous#inspiration) points out some features that `styled-components` does not have:
+
+> - Not to ship a CSS parser to the browser.
+
+`glamorous` gzipped: `7.84kb` 
+
+`styled-components` gzipped: `13.3kb` 
+
+As of `v2` `styled-components` is using a different parsed called [`stylis`](https://github.com/thysultan/stylis.js). A lightweight (3kb) CSS preprocesor. Also there's [experimental work](https://github.com/styled-components/babel-plugin-styled-components#preprocessing-experimental-️-) on dropping the parse in favor of doing it at compile time with babel.
+
+> - Support for RTL (via something like [rtl-css-js](https://github.com/kentcdodds/rtl-css-js)).
+
+> - Support for using real JavaScript objects rather than a CSS string (better tooling support, ESLint, etc.).
+
+While this is true, there are yet any tools to validating style objects yet, at least not that I know of. On the other hand `styled-componets` has support for [`linting`](https://github.com/styled-components/styled-components#linting) & ['syntax highlighting'](https://github.com/styled-components/styled-components#syntax-highlighting) for many editors.
