@@ -291,7 +291,6 @@ While this is true, there are yet any tools to validating style objects yet, at 
 
 ## Conclusion
 
-`styled-components` and `glamorous` are built on the same paradigm and using them would result in the same benefit: reusing styles by reusing components.
+`styled-components` and `glamorous` are two awesome libraries built on the same paradigm and using them would result in the same benefit: reusing styles by reusing and composing components, whichs is a very React_-ish_ approach.
 
 At the end choosing one or the other comes down to either the very few differences or a matter of taste: real CSS in tagged template literals vs. JS objects.
-
