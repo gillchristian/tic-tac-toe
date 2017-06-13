@@ -242,7 +242,9 @@ The most basic case is covered [here](https://github.com/gillchristian/tic-tac-t
 
 ### Important differences
 
-- `.attrs`: `styled-components` offers a way to set props, either static or dynamically by using functions.
+#### `.attrs`
+
+`styled-components` offers a way to set props, either static or dynamically by using functions.
 
 ```js
 const Link = styled.a.attrs({
@@ -259,9 +261,13 @@ const PasswordInput = styled.input.attrs({
 `;
 ```
 
-- In addition to the SSR support `styled-components` provides a [babel plugin](https://github.com/styled-components/babel-plugin-styled-components) to enable styles minification on SSR for production and some other goodies.
+#### `babel-plugin-styled-components`
 
-- `glamorous` [inspiration](https://github.com/paypal/glamorous#inspiration) points out some features that `styled-components` does not have:
+In addition to the SSR support `styled-components` provides a [babel plugin](https://github.com/styled-components/babel-plugin-styled-components) to enable styles minification on SSR for production and some other goodies.
+
+#### Glamorous inspiration
+
+`glamorous` [inspiration](https://github.com/paypal/glamorous#inspiration) points out some features that `styled-components` does not have:
 
 > - Not to ship a CSS parser to the browser.
 
@@ -272,6 +278,8 @@ const PasswordInput = styled.input.attrs({
 As of `v2` `styled-components` is using a different parsed called [`stylis`](https://github.com/thysultan/stylis.js). A lightweight (3kb) CSS preprocesor. Also there's [experimental work](https://github.com/styled-components/babel-plugin-styled-components#preprocessing-experimental-️-) on dropping the parse in favor of doing it at compile time with babel.
 
 > - Support for RTL (via something like [rtl-css-js](https://github.com/kentcdodds/rtl-css-js)).
+
+This is only relevant if required.
 
 > - Support for using real JavaScript objects rather than a CSS string (better tooling support, ESLint, etc.).
 
