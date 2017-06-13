@@ -196,10 +196,23 @@ const StyledLink = styled(Link)`
 
 **glamorous**:
 
-Does not provide a way to extend components like `styled-component` does. But style objects can be reused and also the factory can be applied to other components:
+Does not provide a way to extend components like `styled-component` does. But it provides the [`.withComponent`](https://github.com/paypal/glamorous#withcomponent) method and also style objects can be reused and also the factory can be applied to other components:
 
 ```js
 import glamorous from 'glamorous'
+
+const Button = glamorous.button({
+  color: 'palevioletred',
+  border: '2px solid palevioletred',
+  border-radius: 3,
+});
+
+const Link = Button.withComponent('a')
+
+const TomatoLink = Link.extend`
+	color: tomato;
+	border-color: tomato;
+`;
 
 const someCSS = { 
   display: 'flex',
@@ -294,3 +307,4 @@ While this is true, there are yet any tools to validating style objects yet, at 
 `styled-components` and `glamorous` are two awesome libraries built on the same paradigm and using them would result in the same benefit: reusing styles by reusing and composing components, whichs is a very React_-ish_ approach.
 
 At the end choosing one or the other comes down to either the very few differences or a matter of taste: real CSS in tagged template literals vs. JS objects.
+
