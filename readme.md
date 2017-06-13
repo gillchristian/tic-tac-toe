@@ -271,7 +271,7 @@ In addition to the SSR support `styled-components` provides a [babel plugin](htt
 
 > - Not to ship a CSS parser to the browser.
 
-`glamorous` gzipped: `7.84kb`. Deppends on `glamour` gzipped: `9.45kb`.  Total: `17.89kb`.
+`glamorous` gzipped: `7.84kb`. It also deppends on `glamour` gzipped: `9.45kb`.  Total: `17.89kb`.
 
 `styled-components` gzipped: `13.3kb`.
 
